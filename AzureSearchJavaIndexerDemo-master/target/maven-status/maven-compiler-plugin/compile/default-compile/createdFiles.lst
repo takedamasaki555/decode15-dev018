@@ -1,0 +1,4 @@
+service\SearchServiceClient.class
+model\Document.class
+service\SearchServiceHelper.class
+servlets\SearchServlet.class
