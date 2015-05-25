@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>de:code2015 DEV-018 デモ</title>
+</head>
+<body style="font-size:36px;font-family:Meiryo,Segoe UI">
+    <div id="caption"><b>Azure Storage SDK で<br/> blob ストレージにアップロード/ダウンロードするデモ</div>
+    <div id="caption"><input type="button" value="ガチャをまわす" onclick="onButtonClick();" /><br /></div>
+    
+    <form name="form1" action="">
+        <input name="lang" type="checkbox" value=".NET" />.NET
+        <input name="lang" type="checkbox" value="Java" checked />Java
+        <input name="lang" type="checkbox" value="Node.js" checked />Node.js
+        <input name="lang" type="checkbox" value="PHP" checked />PHP
+        <input name="lang" type="checkbox" value="Python" checked />Python
+        <input name="lang" type="checkbox" value="Ruby" checked />Ruby
+        <input name="lang" type="checkbox" value="Go言語" checked />Go言語<br />
+
+    </form>
+<div id="output" style="font-size:32px;color:white;background-color:dodgerblue">今日は... </div>
+    
+
+
+    <script type="text/javascript" language="javascript">
+        function onButtonClick() {
+            var lang_array = [];
+
+            target = document.getElementById("output");
+            for (var i = 0; i < 7; i++) {
+                if (document.form1.lang[i].checked == true) {
+                    lang_array.push(document.form1.lang[i].value);
+                }
+            }
+            if (lang_array.length == 0) {
+                lang_array = ["Java", "Node.js", "PHP", "Python", "Ruby", "Go言語"];
+            }
+            kore = lang_array[Math.floor(Math.random() * lang_array.length)];
+
+            target.innerHTML = "今日は... " + kore + "!";
+        }
+
+    </script>
+
+</body>
+
+</html>
+
